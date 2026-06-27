@@ -3,6 +3,6 @@
 replicaCount: 2
 image: 
   repository: mindmug/market-app
-  tag: "1.0"
+  tag: "1.1"
   pullPolicy: IfNotPresent
 containerPort: 8000

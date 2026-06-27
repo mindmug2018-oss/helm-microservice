@@ -2,8 +2,31 @@ apiVersion: v1
 entries:
   msa-platform:
   - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2026-06-27T21:25:16.976399419+09:00"
+    dependencies:
+    - condition: index-app.enabled
+      name: index-app
+      repository: file://charts/index
+      version: 0.1.1
+    - condition: market-app.enabled
+      name: market-app
+      repository: file://charts/market
+      version: 0.1.2
+    - condition: post-app.enabled
+      name: post-app
+      repository: file://charts/post
+      version: 0.1.2
+    description: index + market + post
+    digest: 7d1cf85ac291db713ab8ade9b36f6c8e751fcd3c599aee56eddf0dac0a2c4cfb
+    name: msa-platform
+    type: application
+    urls:
+    - https://mindmug2018-oss.github.io/helm-microservice/msa-platform-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-06-27T21:09:15.163033587+09:00"
+    created: "2026-06-27T21:25:16.974072368+09:00"
     dependencies:
     - condition: index-app.enabled
       name: index-app
@@ -26,7 +49,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-06-27T21:09:15.161756018+09:00"
+    created: "2026-06-27T21:25:16.972477021+09:00"
     dependencies:
     - condition: index-app.enabled
       name: index-app
@@ -47,4 +70,4 @@ entries:
     urls:
     - https://mindmug2018-oss.github.io/helm-microservice/msa-platform-0.1.0.tgz
     version: 0.1.0
-generated: "2026-06-27T21:09:15.160846874+09:00"
+generated: "2026-06-27T21:25:16.971175573+09:00"
