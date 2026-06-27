@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: post-app
 spec:
-  replicas: 2
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: post-app
@@ -15,10 +15,35 @@ spec:
     spec:
       containers:
       - name: post-ctn
-        image: mindmug/post-app:1.0
+        image: "{{ .Values.image.repository }}: {{ .Values.image.tag }}"
         ports:
-        - containerPort: 8000
+        - containerPort: {{ .Values.containerPort }}
         resources:
           limits:
             cpu: "200m"
             memory: "64Mi"
+
+# 1. 컨테이터가 최초로 켜질때 까지만 감시 
+        startupProbe:
+          httpGet:
+            path: /health
+            port: {{ .Values.containerPort }}
+          # 10 초 간격으로 
+          periodSeconds: 10 
+          # 총 15번 까지 헬스체크 시도 
+          failureThreshold: 15 
+        # 2. 부팅 완료 이후 데드락 여부만 감시 (실패하면 컨테이너를 자동으로 다시 띄워준다)
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: {{ .Values.containerPort }}
+          # startup 이 성공하면 바로 인계받아서 테스트하기 때문에 대기 시간 필요 없음
+          initialDelaySeconds: 0
+          periodSeconds: 10  # 10 초 마다 감시
+        # 3. 트레픽 유입, 차단 여부를 감시 (실패하면 컨터이너를 다시 띄우는게 아니고 트레픽만 차단한다)
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: {{ .Values.containerPort }}
+          initialDelaySeconds: 0
+          periodSeconds: 5  # 5 초 마다 감시

@@ -4,6 +4,8 @@ from fastapi.responses import JSONResponse
 
 app = FastAPI()
 
+SERVICE = "market-app"
+
 @app.get("/market")
 def read_market():
     return JSONResponse(
@@ -16,3 +18,7 @@ def read_market():
         },
         media_type="application/json; charset=utf-8"
     )
+
+@app.get("/health")
+def health():
+    return {"service": SERVICE, "message":"market service is running"}
