@@ -1,0 +1,12 @@
+dependencies:
+- name: index-app
+  repository: file://charts/index
+  version: 0.1.1
+- name: market-app
+  repository: file://charts/market
+  version: 0.1.2
+- name: post-app
+  repository: file://charts/post
+  version: 0.1.2
+digest: sha256:1d00deb5742a42a1e89ef9733d405268b08de323586eeaf736664794e436bc0c
+generated: "2026-06-27T23:48:49.500009807+09:00"
