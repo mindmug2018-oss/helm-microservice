@@ -3,7 +3,30 @@ entries:
   msa-platform:
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2026-06-28T00:14:22.802153923+09:00"
+    created: "2026-06-28T00:22:00.744644971+09:00"
+    dependencies:
+    - condition: index-app.enabled
+      name: index-app
+      repository: file://charts/index
+      version: 0.1.1
+    - condition: market-app.enabled
+      name: market-app
+      repository: file://charts/market
+      version: 0.1.2
+    - condition: post-app.enabled
+      name: post-app
+      repository: file://charts/post
+      version: 0.1.2
+    description: index + market + post
+    digest: 2ddc266900722f0f89b1e378e43ad7e87c827817b852f3249095f5a68cd0d880
+    name: msa-platform
+    type: application
+    urls:
+    - msa-platform-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2026-06-28T00:22:00.707972215+09:00"
     dependencies:
     - condition: index-app.enabled
       name: index-app
@@ -26,7 +49,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2026-06-28T00:14:22.791029454+09:00"
+    created: "2026-06-28T00:22:00.696184834+09:00"
     dependencies:
     - condition: index-app.enabled
       name: index-app
@@ -49,7 +72,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2026-06-28T00:14:22.784480909+09:00"
+    created: "2026-06-28T00:22:00.689090196+09:00"
     dependencies:
     - condition: index-app.enabled
       name: index-app
@@ -72,7 +95,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-06-28T00:14:22.782717868+09:00"
+    created: "2026-06-28T00:22:00.685331243+09:00"
     dependencies:
     - condition: index-app.enabled
       name: index-app
@@ -95,7 +118,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-06-28T00:14:22.780688417+09:00"
+    created: "2026-06-28T00:22:00.684218025+09:00"
     dependencies:
     - condition: index-app.enabled
       name: index-app
@@ -116,4 +139,4 @@ entries:
     urls:
     - msa-platform-0.1.0.tgz
     version: 0.1.0
-generated: "2026-06-28T00:14:22.779406243+09:00"
+generated: "2026-06-28T00:22:00.683456574+09:00"
