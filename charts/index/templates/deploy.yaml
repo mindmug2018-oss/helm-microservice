@@ -1,0 +1,25 @@
+# k8s_test/step24_microservice_helm/charts/index/deploy.yaml
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: index-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: index-app
+  template:
+    metadata:
+      labels:
+        app: index-app
+    spec:
+      containers:
+      - name: index-ctn
+        image: mindmug/index-app:1.0  
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: "200m"
+            memory: "64Mi"
