@@ -3,7 +3,7 @@ entries:
   msa-platform:
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2026-06-27T23:58:17.972186757+09:00"
+    created: "2026-06-28T00:13:17.471235921+09:00"
     dependencies:
     - condition: index-app.enabled
       name: index-app
@@ -18,7 +18,7 @@ entries:
       repository: file://charts/post
       version: 0.1.2
     description: index + market + post
-    digest: 0e23d26e0c137546f4827c93c389103989c2095832f8b812f905cb7550f48bd9
+    digest: 62a17659973bb2ffe5617f65a32d03b2d4006008d404f674d2c2172f29c5ca1a
     name: msa-platform
     type: application
     urls:
@@ -26,7 +26,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2026-06-27T23:58:17.964187305+09:00"
+    created: "2026-06-28T00:13:17.464935143+09:00"
     dependencies:
     - condition: index-app.enabled
       name: index-app
@@ -49,7 +49,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-06-27T23:58:17.955808279+09:00"
+    created: "2026-06-28T00:13:17.463115002+09:00"
     dependencies:
     - condition: index-app.enabled
       name: index-app
@@ -72,7 +72,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-06-27T23:58:17.954590247+09:00"
+    created: "2026-06-28T00:13:17.462147131+09:00"
     dependencies:
     - condition: index-app.enabled
       name: index-app
@@ -93,4 +93,4 @@ entries:
     urls:
     - msa-platform-0.1.0.tgz
     version: 0.1.0
-generated: "2026-06-27T23:58:17.953707463+09:00"
+generated: "2026-06-28T00:13:17.461323885+09:00"

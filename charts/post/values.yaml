@@ -2,6 +2,6 @@
 replicaCount: 2
 image: 
   repository: mindmug/post-app
-  tag: "1.1"
+  tag: "1.2"
   pullPolicy: IfNotPresent
 containerPort: 8000
